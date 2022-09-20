@@ -1,0 +1,113 @@
+body {
+  font-family: Avenir, system-ui, sans-serif;
+}
+
+.ship-menus {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ship-pane {
+  margin: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+}
+
+.ship-pane.destroyed {
+  box-shadow: 0 0 0 1px  rgb(235, 35, 62);
+}
+
+.ship-pane.destroyed:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(235, 35, 62, 0.25);
+}
+
+.ship-pane .pilot-img {
+  width: 200px;
+  height: 280px;
+}
+
+.board {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  margin-left: -460px;
+  width: 920px;
+  height: 920px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.ship {
+  position: absolute;
+  transition: left 1s, bottom 1s, box-shadow .2s;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.ship .move-menu {
+  position: absolute;
+  z-index: 100;
+  left: 72px;
+  top: 0;
+  background-color: darkgray;
+  width: 214px;
+  height: 164px;
+}
+
+.ship .move-menu .icon:hover {
+  box-shadow: 0 0 0 2px orange;
+}
+
+.ship .name {
+  position: absolute;
+  top: 62px;
+  left: -5px;
+  text-align: center;
+}
+
+.ship-tile {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: cadetblue;
+  transition: transform 1s;
+}
+
+.ship-tile:before {
+  content: "";
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: crimson transparent transparent transparent;
+  position: absolute;
+  top: 0px;
+}
+
+.ship.prompt {
+  border-color: orange;
+}
+
+.icon-tabler-arrow-back {
+  transform: rotate(-90deg);
+}
+
+.alert {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 40px;
+}

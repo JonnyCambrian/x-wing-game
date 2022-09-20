@@ -1,0 +1,10 @@
+{:source-paths ["src/cljs"]
+ :dependencies [[binaryage/devtools "1.0.6"]
+                [reagent "1.1.1"]
+                [same/ish "0.1.5"]]
+ :dev-http {8080 "public"}
+ :builds {:frontend
+          {:target :browser
+           :output-dir "public/js"
+           :dev {:modules {:main {:init-fn xwing.dev/init!}}}
+           :release {:modules {:main {:init-fn xwing.release/init!}}}}}}
